@@ -11,7 +11,7 @@ height: 100vh;
             export default function HomePage(){
                 return (
                     <Body>
-                    <SidebarMenu image=''/>
+                    <SidebarMenu nome="Burguer King"/>
 
                     </Body>
                 );
