@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Logo,LogoCliente} from '../../logos';
-import 'boxicons';
+
 
 
 
@@ -55,7 +55,7 @@ box-shadow: 1px 1px 10px 5px  #e9e9e9;
       .borderfoto{
       width: 6.9vw;
       height: 14.5vh;
-      background-color: #00000024;
+      background-color: #008d2a23;
       position: fixed;
       border-radius: 50px;
       top: 82px;
@@ -73,11 +73,69 @@ box-shadow: 1px 1px 10px 5px  #e9e9e9;
 .itensmenu{
   height: 69vh;
   padding-top: 30px;
+ 
 }
 
-.itensmenu li{
-  list-style: none;
-}
+     .itensmenu li{
+     position: relative;
+     list-style: none;
+     }
+      .itensmenu li i{
+      height: 2vh;
+      min-width: 4vw;
+      text-align: center;
+      line-height: 50px;
+      font-size: 23px;
+      
+     } 
+
+   
+
+     .itensmenu li a{
+      text-decoration: none;
+      color :#2a1225 ;
+      transition: 0.2s;
+      
+     }
+
+     .itensmenu .nomeC{
+      font-size: 17px;
+      font-weight: 600;
+
+      
+    
+     }
+     
+    .hover :hover{
+     transition: 0.2s;
+     color:#a2368c !important;
+    }
+  
+     
+     
+    
+     .drop{
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    /* Aqui fica o sub-menu */
+      .sub-menu a{
+        text-decoration: none;
+        color:#2a122596;
+        font-size: 16px;
+        display: none;
+      }
+
+      .sub-menu li{
+        padding: 4px 20px 0px 50px;
+        
+      }
+
+      
+
+
  
 `;
 
@@ -85,8 +143,10 @@ box-shadow: 1px 1px 10px 5px  #e9e9e9;
 export default function SidebarMenu(props){
     return(
     <>
-   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
     <Sidebar>
+
+        {/* estrutura header menu */}
         <div className="side-header">
             <div className="logoRFF">
                 <img src={Logo} alt="" />
@@ -95,7 +155,6 @@ export default function SidebarMenu(props){
         <div className="spnomelogo">
             <div className="borderfoto"></div>
             <div className="foto"></div>
-            
             <br />
             <br />
             <br />
@@ -104,28 +163,50 @@ export default function SidebarMenu(props){
             <br />
             <div className="nomecliente">{props.nome}</div>
             </div>
+            
+            
+            {/* Estrutura dos itens menu */}
             <ul className='itensmenu'>
-              <li>
+
+              {/* Dashboard */}
+              <li className="hover">
                 <a href="https://plataforma.fastfoodbr.com/">
-                <box-icon color ='#2a122575'name='bar-chart-square'></box-icon>
-                <span className='NomeC'>Dashboard</span>
+                  <div >
+                <i className='bx bx-bar-chart'></i>
+                <span className='nomeC'>Dashboard</span>
+               
+                </div>
                 </a>
               </li>
-              <li>
+
+              {/* Pedidos */}
+              <li className="hover">
                 <a href="https://plataforma.fastfoodbr.com/">
-                <box-icon color ='#2a122575'name='basket'></box-icon>
-                <span className='NomeC'>Pedidos</span>
+                <i className='bx bx-basket'></i>
+                <span className='nomeC'>Pedidos</span>
                 </a>
               </li>
-              <li>
+
+              {/* Cardápio e seus sub-menus */}
+              <li className="hover">
                 <div className="drop">
                 <a href="https://plataforma.fastfoodbr.com/">
-                <box-icon color='#2a122575'name='dish'></box-icon>
-                <span className='NomeC'>Cardápio</span>
+                <i class='bx bx-dish'></i>
+                <span className='nomeC'>Cardápio</span>
                 </a>
-                <box-icon type='solid' name='chevron-down'></box-icon>
+                <i className='bx bxs-chevron-down arrow' ></i>
                 </div>
+
+               {/*  Sub-menu cardápio */}
+                <ul className="sub-menu">
+                  <li><a href="https://plataforma.fastfoodbr.com/">Categorias</a></li>
+                  <li><a href="https://plataforma.fastfoodbr.com/">Produtos</a></li>
+                  <li><a href="https://plataforma.fastfoodbr.com/">Banners</a></li>
+                  <li><a href="https://plataforma.fastfoodbr.com/">Cupons</a></li>
+                </ul>
               </li>
+
+
             </ul>
     </Sidebar>
     </>
