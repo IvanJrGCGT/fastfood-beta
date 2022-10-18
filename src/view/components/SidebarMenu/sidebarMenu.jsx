@@ -2,11 +2,6 @@ import React from 'react';
 import SidebarStyled from '../../atomic/SidebarStyled';
 import './scriptSidebar.js';
 
-
-
-
-
-
 export default function SidebarMenu(props){
   return(
 

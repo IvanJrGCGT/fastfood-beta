@@ -10,8 +10,8 @@ width: 210px;
 height: 100%;
 display: flex;
 flex-direction: column;
-border-radius: 20px;
-box-shadow: 1px 1px 10px 5px  #e9e9e9;
+border-radius: 0px 20px 20px 0px;
+box-shadow: 1px 1px 10px 2px  #4444441a;
 transition: all 0.5s ease;
 
 }
@@ -344,11 +344,12 @@ transition: all 0.5s ease;
     }  
       /* Aqui tem o botão do sidebar */
       .button-space{
+
         cursor: pointer;
         position: fixed;
         bottom: 565px;
         left: 198px;
-        width: calc(100% - 1345px);;
+        width: calc(100% - 1330px);;
         border-radius: 60px;
         background-color: #ffffff;
         transition: all 0.5s ease;
